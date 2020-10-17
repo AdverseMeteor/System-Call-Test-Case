@@ -1,17 +1,17 @@
 // The MIT License (MIT)
-// 
-// Copyright (c) 2016, 2017 Trevor Bakker 
-// 
+//
+// Copyright (c) 2016, 2017 Trevor Bakker
+//
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -39,10 +39,10 @@ int main ( int argc, char ** argv )
 
   int pid_max = 0;
   FILE * fd;
-  
+
   fd = fopen("/proc/sys/kernel/pid_max", "r" );
   int ret = fscanf( fd, "%d", &pid_max );
-   
+
   if( ret == -1 )
   {
     perror("ERROR: ");
@@ -60,9 +60,9 @@ int main ( int argc, char ** argv )
 
 
   struct proc_stat ps;
-  memset( &ps, 0, sizeof( struct proc_stat ) ); 
+  memset( &ps, 0, sizeof( struct proc_stat ) );
 
-  syscall(549, pid, &ps);
+  syscall(548, pid, &ps);
 
   printf("Process State: \n" );
   printf("PID : %d\n", ps.pid );
