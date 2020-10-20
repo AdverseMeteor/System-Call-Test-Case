@@ -29,6 +29,6 @@
 
 int main ( int argc, char ** argv )
 {
-  syscall(549);
+  syscall(548);
   return 0;
 }
