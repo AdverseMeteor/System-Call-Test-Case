@@ -62,7 +62,7 @@ int main ( int argc, char ** argv )
   struct proc_stat ps;
   memset( &ps, 0, sizeof( struct proc_stat ) );
 
-  syscall(548, pid, &ps);
+  syscall(549, pid, &ps);
 
   printf("Process State: \n" );
   printf("PID : %d\n", ps.pid );
